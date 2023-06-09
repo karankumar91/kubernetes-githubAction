@@ -14,10 +14,10 @@ spec:
     spec:
       containers:
       - name: djangodeployment
-        image:  karan91052/django
+        image:  karan91052/newimage
         resources:
           limits:
             memory: "256Mi"
             cpu: "500m"
         ports:
-        - containerPort: 80
+        - containerPort: 8000
