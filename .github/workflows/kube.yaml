@@ -16,4 +16,14 @@ jobs:
       - name: Set up Kubernetes
         run: |
           cd kubernetesFile
-          kubectl apply -f deployment.yaml --server=https://kubernetes.docker.internal:6443 --insecure-skip-tls-verify
+          kubectl config set-credentials my-user --username=karan91052 --password=Amit@91052
+          kubectl config use-context <context-name>
+
+      - name: Authenticate with Docker
+        run: echo ${{ secrets.DOCKER_TOKEN}} | docker login --username karan91052 --password-stdin
+
+      - name: Deploy to Kubernetes
+        run: |
+          cd kubernetesFile
+          kubectl apply -f deployment.yaml
+
