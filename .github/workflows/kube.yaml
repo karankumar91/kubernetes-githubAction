@@ -13,11 +13,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Kubernetes
-        run: |
-          cd kubernetesFile
-          kubectl config set-credentials my-user --username=karan91052 --password=Amit@91052
-          kubectl config use-context <context-name>
+      # - name: Set up Kubernetes
+      #   run: |
+      #     cd kubernetesFile
+      #     kubectl config set-credentials my-user --username=karan91052 --password=Amit@91052
+      #     kubectl config use-context <context-name>
 
       - name: Authenticate with Docker
         run: echo ${{ secrets.DOCKER_TOKEN}} | docker login --username karan91052 --password-stdin
