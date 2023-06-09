@@ -15,7 +15,6 @@ jobs:
 
       - name: Set up Kubernetes
         run: |
-          chmod +x kubectl
-          sudo mv kubectl /usr/local/bin/
-          kubectl apply -f kubernetesfile/
+          cd kubernetesFile
+          kubectl apply -f deployment.yaml
 
