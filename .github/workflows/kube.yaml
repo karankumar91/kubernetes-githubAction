@@ -16,5 +16,4 @@ jobs:
       - name: Set up Kubernetes
         run: |
           cd kubernetesFile
-          kubectl apply -f deployment.yaml
-
+          kubectl apply -f deployment.yaml || exit 1
